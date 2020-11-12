@@ -6,6 +6,8 @@
 
 [DEMO](http://localhost:3000/)
 
+![Demo picture](https://github.com/Jesperpaulsen/sanity-mobile-preview/blob/master/docs/Preview-demo.png?raw=true)
+
 ## Install
 
 ```bash
