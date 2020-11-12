@@ -38,7 +38,7 @@ Add imports:
 
 ```jsx
 import SanityMobilePreview from 'sanity-mobile-preview'
-import 'sanity-mobile-preview/dist/index.css'
+import 'sanity-mobile-preview/dist/index.css?raw'
 ```
 
 Add line 47, replace
