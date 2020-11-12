@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { ExampleComponent } from 'sanity-mobile-preview'
+import { MobileDevicePreview } from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <MobileDevicePreview allowedDevices={"iphone-x"} />
 }
 
 export default App
