@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/sanity-mobile-preview.svg)](https://www.npmjs.com/package/sanity-mobile-preview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[DEMO](http://localhost:3000/)
+[DEMO](https://jesperpaulsen.github.io/sanity-mobile-preview/)
 
 ![Demo picture](https://github.com/Jesperpaulsen/sanity-mobile-preview/blob/master/docs/Preview-demo.png?raw=true)
 
@@ -21,10 +21,8 @@ import React, { Component } from 'react'
 import SanityMobilePreview from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css?raw'
 
-class Example extends Component {
-  render() {
+const Example = () => {
     return <SanityMobilePreview />
-  }
 }
 ```
 
