@@ -1,38 +1,38 @@
 import React, { createElement, DetailedReactHTMLElement } from 'react'
-import { devices } from './devices'
-import mobileStyle from './devices.min.css'
+import mobileStyle from '../styles/devices.min.css'
 import {
+  MobileDevice,
   MobileDeviceColors,
-  MobileDevices,
   MobileDeviceStyleNode
-} from './index'
+} from '../index'
 
 interface IProps {
-  mobileDevice: MobileDevices
+  selectedDevice: MobileDevice
   selectedColor: MobileDeviceColors
   landscape: boolean
   children: any
 }
 
 export const BuildDevice: React.FC<IProps> = ({
-  mobileDevice,
+  selectedDevice,
   selectedColor,
   landscape,
   children
 }: IProps) => {
-  const tempDevice = devices[mobileDevice]
-  const device = tempDevice || devices['iphone-x']
-
-  const colors = device.colors
+  const colors = selectedDevice.colors
   const hasColor = colors.includes(selectedColor)
   const color = hasColor ? selectedColor : 'black'
 
-  let rootDeviceClass = `${mobileStyle['marvel-device']}  ${mobileStyle[mobileDevice]} ${mobileStyle[color]}`
+  let rootDeviceClass = `${mobileStyle['marvel-device']}  ${
+    mobileStyle[selectedDevice.type]
+  } ${mobileStyle[color]}`
 
   if (landscape) rootDeviceClass += ' ' + mobileStyle[rootDeviceClass]
 
   return (
-    <div className={rootDeviceClass}>{renderer(device.style, children)}</div>
+    <div className={rootDeviceClass}>
+      {renderer(selectedDevice.style, children)}
+    </div>
   )
 }
 

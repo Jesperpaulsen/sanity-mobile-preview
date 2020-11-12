@@ -1,29 +1,20 @@
-import { MobileDevicePreview } from './MobileDevicePreview'
+import { MobileDevicePreview } from './components/MobileDevicePreview'
 
 export { MobileDevicePreview }
 
 export type MobileDevices =
   | 'iphone-x'
   | 'note8'
-  | 'iphone-8'
-  | 'iphone-8-plus'
-  | 'iphone-6s'
-  | 'ipad-mini'
-  | 'iphone-5s'
-  | 'nexus-5'
-  | 'lumia-920'
-  | 'samsung-galaxy-s5'
-  | 'htc-one'
+  | 'iphone8'
+  | 'iphone8plus'
+  | 'iphone5s'
+  | 'ipad'
+  | 'nexus5'
 
 export type MobileDeviceColors =
   | 'silver'
   | 'black'
   | 'gold'
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'white'
 
 export type MobileDeviceStyleClasses =
   | 'notch'
@@ -39,6 +30,7 @@ export type MobileDeviceStyleClasses =
   | 'overflow'
   | 'speaker'
   | 'sensors'
+  | 'sensor'
   | 'more-sensors'
   | 'sleep'
   | 'volume'
@@ -48,6 +40,7 @@ export type MobileDeviceStyleClasses =
 
 export interface MobileDevice {
   type: MobileDevices
+  readableName: string
   colors: MobileDeviceColors[]
   style: MobileDeviceStyleNode[]
 }

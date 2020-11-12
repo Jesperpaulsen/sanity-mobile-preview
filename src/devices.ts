@@ -3,6 +3,7 @@ import { MobileDevice } from './index'
 export const devices: { [id: string]: MobileDevice } = {
   'iphone-x': {
     type: 'iphone-x',
+    readableName: 'iPhone X',
     colors: ['black'],
     style: [
       {
@@ -28,6 +29,7 @@ export const devices: { [id: string]: MobileDevice } = {
   },
   note8: {
     type: 'note8',
+    readableName: 'Note 8',
     colors: ['black'],
     style: [
       { className: 'inner' },
@@ -41,36 +43,75 @@ export const devices: { [id: string]: MobileDevice } = {
       { className: 'screen' }
     ]
   },
-  // [MobileDevices.IPHONE_8_PLUS]: {
-  //   type: MobileDevices.IPHONE_8_PLUS,
-  //   colors: [MobilDeviceColors.BLACK, MobilDeviceColors.SILVER, MobilDeviceColors.GOLD],
-  // },
-  // [MobileDevices.IPHONE_8]: {
-  //   type: MobileDevices.IPHONE_8,
-  //   colors: [MobilDeviceColors.BLACK, MobilDeviceColors.SILVER, MobilDeviceColors.GOLD],
-  // },
-  // [MobileDevices.IPHONE_5S]: {
-  //   type: MobileDevices.IPHONE_5S,
-  //   colors: [MobilDeviceColors.BLACK],
-  // },
-  // [MobileDevices.IPAD_MINI]: {
-  //   type: MobileDevices.IPAD_MINI,
-  //   colors: [MobilDeviceColors.BLACK, MobilDeviceColors.SILVER],
-  // },
-  // [MobileDevices.NEXUS_5]: {
-  //   type: MobileDevices.NEXUS_5,
-  //   colors: [MobilDeviceColors.BLACK],
-  // },
-  // [MobileDevices.LUMIA_920]: {
-  //   type: MobileDevices.LUMIA_920,
-  //   colors: [MobilDeviceColors.BLACK, MobilDeviceColors.WHITE, MobilDeviceColors.YELLOW, MobilDeviceColors.RED, MobilDeviceColors.BLUE],
-  // },
-  // [MobileDevices.SAMSUNG_GALAXY_S5]: {
-  //   type: MobileDevices.LUMIA_920,
-  //   colors: [MobilDeviceColors.BLACK, MobilDeviceColors.WHITE],
-  // },
-  // [MobileDevices.HTC_ONE]: {
-  //   type: MobileDevices.HTC_ONE,
-  //   colors: [],
-  // },
+  iphone8: {
+    type: 'iphone8',
+    readableName: 'iPhone 8',
+    colors: ['black', 'silver', 'gold'],
+    style: [
+      { className: 'top-bar' },
+      { className: 'sleep' },
+      { className: 'volume' },
+      { className: 'camera' },
+      { className: 'sensor' },
+      { className: 'speaker' },
+      { className: 'screen' },
+      { className: 'home' },
+      { className: 'bottom-bar' }
+    ]
+  },
+  iphone8plus: {
+    type: 'iphone8plus',
+    readableName: 'iPhone 8 plus',
+    colors: ['black', 'silver', 'gold'],
+    style: [
+      { className: 'top-bar' },
+      { className: 'sleep' },
+      { className: 'volume' },
+      { className: 'camera' },
+      { className: 'sensor' },
+      { className: 'speaker' },
+      { className: 'screen' },
+      { className: 'home' },
+      { className: 'bottom-bar' }
+    ]
+  },
+  iphone5s: {
+    type: 'iphone5s',
+    readableName: 'iPhone 5s',
+    colors: ['black', 'silver', 'gold'],
+    style: [
+      { className: 'top-bar' },
+      { className: 'sleep' },
+      { className: 'volume' },
+      { className: 'camera' },
+      { className: 'sensor' },
+      { className: 'speaker' },
+      { className: 'screen' },
+      { className: 'home' },
+      { className: 'bottom-bar' }
+    ]
+  },
+  ipad: {
+    type: 'ipad',
+    readableName: 'iPad mini',
+    colors: ['black', 'silver'],
+    style: [
+      { className: 'camera' },
+      { className: 'screen' },
+      { className: 'home' },
+      { className: 'bottom-bar' }
+    ]
+  },
+  nexus5: {
+    type: 'nexus5',
+    readableName: 'Nexus 5',
+    colors: ['black'],
+    style: [
+      { className: 'top-bar' },
+      { className: 'sleep' },
+      { className: 'volume' },
+      { className: 'camera' },
+      { className: 'screen' }
+    ]
+  }
 }
