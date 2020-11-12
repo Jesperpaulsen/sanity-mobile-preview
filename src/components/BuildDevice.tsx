@@ -4,7 +4,7 @@ import {
   MobileDevice,
   MobileDeviceColors,
   MobileDeviceStyleNode
-} from '../index'
+} from '../types'
 
 interface IProps {
   selectedDevice: MobileDevice

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { MobileDevicePreview } from 'sanity-mobile-preview'
+import MobileDevicePreview from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css'
 
 const App = () => {

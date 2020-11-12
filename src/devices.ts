@@ -1,4 +1,4 @@
-import { MobileDevice } from './index'
+import { MobileDevice } from './types'
 
 export const devices: { [id: string]: MobileDevice } = {
   'iphone-x': {

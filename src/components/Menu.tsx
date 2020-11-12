@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { devices } from '../devices'
-import { MobileDevice, MobileDeviceColors, MobileDevices } from '../index'
+import { MobileDevice, MobileDeviceColors, MobileDevices } from '../types'
 import { Dropdown } from './Dropdown'
 
 interface IMenuProps {

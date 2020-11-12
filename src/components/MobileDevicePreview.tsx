@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { MobileDevice, MobileDeviceColors, MobileDevices } from '../index'
+import { MobileDevice, MobileDeviceColors, MobileDevices } from '../types'
 import { BuildDevice } from './BuildDevice'
 import { Menu } from './Menu'
 import { devices } from '../devices'
