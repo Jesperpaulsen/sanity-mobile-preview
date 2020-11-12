@@ -5,7 +5,7 @@ import 'sanity-mobile-preview/dist/index.css'
 
 const App = () => {
   return <MobileDevicePreview preSelectedDevice={"ipad"} preSelectedColor={"silver"} >
-    <div>Hello</div>
+    <div style={{ display: 'flex', justifyContent: 'center' }}> This is a demo 🤠</div>
   </MobileDevicePreview>
 }
 

@@ -4,7 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/sanity-mobile-preview.svg)](https://www.npmjs.com/package/sanity-mobile-preview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-
+[DEMO](http://localhost:3000/)
 
 ## Install
 
@@ -42,21 +42,27 @@ import 'sanity-mobile-preview/dist/index.css'
 Add line 47, replace
 
 ```tsx
-<div className={styles.componentWrapper}>
-  <div className={styles.iframeContainer}>
-    <iframe src={url} frameBorder={'0'} />
-  </div>
-</div>
+return(
+    <div className={styles.componentWrapper}>
+      <div className={styles.iframeContainer}>
+        <iframe src={url} frameBorder={'0'} />
+      </div>
+    </div>
+)
 ```
 
 with
 
 ```tsx
-<SanityMobilePreview>
-  <div className={styles.iframeContainer}>
-    <iframe src={url} frameBorder={'0'} />
-  </div>
-</SanityMobilePreview>
+  return (
+    <div className={styles.componentWrapper}>
+      <SanityMobilePreview>
+        <div className={styles.iframeContainer}>
+          <iframe src={url} frameBorder={'0'} />
+        </div>
+      </SanityMobilePreview>
+    </div>
+  )
 ```
 
 Then go to `deskStructure.js`.
