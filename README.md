@@ -41,7 +41,7 @@ import SanityMobilePreview from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css?raw'
 ```
 
-Add line 47, replace
+At line 47, replace
 
 ```tsx
 return(
