@@ -43,7 +43,7 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
       device = devices['iphone-x']
     }
     setPreselectedColorForDevice(device)
-    setSelectedDevice(device)
+    setSelectedDevice(device || devices['iphone-x'])
   }
 
   const checkPreSelectedDeviceAndAllowedDevices = (
@@ -75,7 +75,6 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
     updatedDevice: MobileDevice,
     updatedColor: MobileDeviceColors
   ) => {
-    console.log(updatedColor)
     setSelectedDevice(updatedDevice)
     setSelectedColor(updatedColor)
   }
@@ -107,6 +106,6 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
       </BuildDevice>
     </div>
   ) : (
-    <div>loading</div>
+    <div>Something strange happened</div>
   )
 }

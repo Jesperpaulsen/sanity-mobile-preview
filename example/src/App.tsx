@@ -4,7 +4,7 @@ import { MobileDevicePreview } from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css'
 
 const App = () => {
-  return <MobileDevicePreview preSelectedDevice={"ipad"} allowedDevices={["iphone-x", "ipad"]} preSelectedColor={"silver"} showMenu={false}>
+  return <MobileDevicePreview preSelectedDevice={"ipad"} preSelectedColor={"silver"} >
     <div>Hello</div>
   </MobileDevicePreview>
 }

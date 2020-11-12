@@ -1,5 +1,5 @@
 import React, { createElement, DetailedReactHTMLElement } from 'react'
-import mobileStyle from '../styles/devices.min.css'
+import mobileStyle from '../devices.min.css'
 import {
   MobileDevice,
   MobileDeviceColors,
