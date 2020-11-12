@@ -85,16 +85,29 @@ You should now be able to preview your website with a mobile view.
 
 The SanityMobilePreview takes four optional arguments:
 
-| Argument      | Values |
-| ----------- | ----------- |
-| allowedDevices      | An array of MobileDevices. This will be the devices that are selectable in the dropdown     |
-| preSelectedDevice   | A MobileDevice. The default device selected.        |
-| preSelectedColor   | A device color. The default device color selected.    |
-| showMenu   | A boolean. Controls the visibility of the dropdowns.      |
+| Argument      | Values | Default |
+| ----------- | ----------- | ----------- |
+| allowedDevices      | An array of MobileDevices. This will be the devices that are selectable in the dropdown menu. | All devices
+| preSelectedDevice   | A MobileDevice. The default device to be selected.        | 'iphone-x'
+| preSelectedColor   | A device color. The default device color to selected.    | 'black
+| showMenu   | A boolean. Controls the visibility of the dropdowns.      | true
 
 If you have specified a preSelectedDevice that is not specified in allowedDevices, it will default to the first device in allowedDevices.
 
 If you have specified a preSelectedColor that is not applicable to the preSelectedDevice, the preSelectedColor will default to black.
+
+#### Example
+This example will load a silver iPad mini as default, and only allows iPhone X and iPad to be selected:
+
+```js
+
+const App = () => {
+  return <MobileDevicePreview preSelectedDevice={"ipad"} preSelectedColor={"silver"} allowedDevices={["ipad", "iphone-x"]} >
+    <div> This is a demo 🤠</div>
+  </MobileDevicePreview>
+}
+
+```
 
 ## Types
 
