@@ -4,7 +4,7 @@ export { MobileDevicePreview }
 
 export type MobileDevices =
   | 'iphone-x'
-  | 'galaxy-note-8'
+  | 'note8'
   | 'iphone-8'
   | 'iphone-8-plus'
   | 'iphone-6s'
@@ -15,7 +15,7 @@ export type MobileDevices =
   | 'samsung-galaxy-s5'
   | 'htc-one'
 
-export type MobilDeviceColors =
+export type MobileDeviceColors =
   | 'silver'
   | 'black'
   | 'gold'
@@ -48,7 +48,7 @@ export type MobileDeviceStyleClasses =
 
 export interface MobileDevice {
   type: MobileDevices
-  colors: MobilDeviceColors[]
+  colors: MobileDeviceColors[]
   style: MobileDeviceStyleNode[]
 }
 

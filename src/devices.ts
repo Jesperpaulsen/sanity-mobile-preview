@@ -25,7 +25,22 @@ export const devices: { [id: string]: MobileDevice } = {
       { className: 'inner-shadow' },
       { className: 'screen' }
     ]
-  }
+  },
+  note8: {
+    type: 'note8',
+    colors: ['black'],
+    style: [
+      { className: 'inner' },
+      { className: 'overflow', children: [{ className: 'shadow' }] },
+      { className: 'speaker' },
+      { className: 'sensors' },
+      { className: 'more-sensors' },
+      { className: 'sleep' },
+      { className: 'volume' },
+      { className: 'camera' },
+      { className: 'screen' }
+    ]
+  },
   // [MobileDevices.IPHONE_8_PLUS]: {
   //   type: MobileDevices.IPHONE_8_PLUS,
   //   colors: [MobilDeviceColors.BLACK, MobilDeviceColors.SILVER, MobilDeviceColors.GOLD],
@@ -36,10 +51,6 @@ export const devices: { [id: string]: MobileDevice } = {
   // },
   // [MobileDevices.IPHONE_5S]: {
   //   type: MobileDevices.IPHONE_5S,
-  //   colors: [MobilDeviceColors.BLACK],
-  // },
-  // [MobileDevices.GALAXY_NOTE_8]: {
-  //   type: MobileDevices.GALAXY_NOTE_8,
   //   colors: [MobilDeviceColors.BLACK],
   // },
   // [MobileDevices.IPAD_MINI]: {

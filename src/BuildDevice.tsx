@@ -2,14 +2,14 @@ import React, { createElement, DetailedReactHTMLElement } from 'react'
 import { devices } from './devices'
 import mobileStyle from './devices.min.css'
 import {
-  MobilDeviceColors,
+  MobileDeviceColors,
   MobileDevices,
   MobileDeviceStyleNode
 } from './index'
 
 interface IProps {
   mobileDevice: MobileDevices
-  selectedColor: MobilDeviceColors
+  selectedColor: MobileDeviceColors
   landscape: boolean
   children: any
 }
