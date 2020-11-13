@@ -1,8 +1,14 @@
-import React, {createElement, DetailedReactHTMLElement, useEffect, useState} from 'react'
+import React, {
+  createElement,
+  DetailedReactHTMLElement,
+  useEffect,
+  useState
+} from 'react'
 import mobileStyle from '../devices.min.css'
 import {
   MobileDevice,
   MobileDeviceColors,
+  MobileDeviceStyleClasses,
   MobileDeviceStyleNode
 } from '../types'
 
@@ -19,7 +25,7 @@ export const BuildDevice: React.FC<IProps> = ({
   landscape,
   children
 }: IProps) => {
-  const [rootDeviceClass, setRootDeviceClass] = useState('');
+  const [rootDeviceClass, setRootDeviceClass] = useState('')
 
   useEffect(() => {
     const colors = selectedDevice.colors
@@ -45,16 +51,28 @@ function renderer(
   mobileDeviceStyleNodes: MobileDeviceStyleNode[],
   children?: React.FC
 ): DetailedReactHTMLElement<any, any>[] {
-  return mobileDeviceStyleNodes.map((style) => {
+  return mobileDeviceStyleNodes.map((style, index) => {
     return createElement(
       'div',
       {
-        className: mobileStyle[style.className as string],
-        key: style.className as string
+        className: Array.isArray(style.className)
+          ? convertClassNameArrayToClassName(style.className)
+          : mobileStyle[style.className],
+        key: 'mobileStyle' + index
       },
       style.className === 'screen'
         ? children
         : style.children && renderer(style.children, children)
     )
   })
+}
+
+const convertClassNameArrayToClassName = (
+  classNameArray: MobileDeviceStyleClasses[]
+) => {
+  let res = ''
+  for (const style of classNameArray) {
+    res += `${mobileStyle[style]} `
+  }
+  return res
 }

@@ -1,7 +1,7 @@
 {
   "name": "sanity-mobile-preview",
-  "version": "1.0.4",
-  "description": "A NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.",
+  "version": "1.0.5",
+  "description": "An NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.",
   "author": "Jesperpaulsen",
   "license": "MIT",
   "repository": "Jesperpaulsen/sanity-mobile-preview",
