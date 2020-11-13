@@ -1,6 +1,6 @@
 # sanity-mobile-preview
 
-> A package to be used in Sanity studio to preview websites for mobiles and tablets. Works with other React projects as well. Based on Marvel devices.
+> A NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.
 
 [![NPM](https://img.shields.io/npm/v/sanity-mobile-preview.svg)](https://www.npmjs.com/package/sanity-mobile-preview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -16,8 +16,6 @@ npm install --save sanity-mobile-preview
 
 ## Usage
 ```tsx
-import React, { Component } from 'react'
-
 import SanityMobilePreview from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css?raw'
 
@@ -89,6 +87,7 @@ The SanityMobilePreview takes four optional arguments:
 | preSelectedDevice   | A MobileDevice. The default device to be selected.        | 'iphone-x'
 | preSelectedColor   | A device color. The default device color to selected.    | 'black
 | showMenu   | A boolean. Controls the visibility of the dropdowns.      | true
+| preSelectedLandscape   | A boolean. The default orientation of the devices      | false
 
 If you have specified a preSelectedDevice that is not specified in allowedDevices, it will default to the first device in allowedDevices.
 

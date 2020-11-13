@@ -1,7 +1,7 @@
 {
   "name": "sanity-mobile-preview",
-  "version": "1.0.3",
-  "description": "A package to be used in Sanity studio to preview websites for mobiles and tablets. Works with other React projects as well. Based on Marvel devices.",
+  "version": "1.0.4",
+  "description": "A NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.",
   "author": "Jesperpaulsen",
   "license": "MIT",
   "repository": "Jesperpaulsen/sanity-mobile-preview",

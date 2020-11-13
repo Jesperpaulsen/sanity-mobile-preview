@@ -8,6 +8,7 @@ export interface IMobileDeviceProps {
   allowedDevices?: MobileDevices[]
   preSelectedDevice?: MobileDevices
   preSelectedColor?: MobileDeviceColors
+  preSelectedLandscape?: boolean
   showMenu?: boolean
   children?: any
 }
@@ -17,12 +18,14 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
   preSelectedDevice,
   preSelectedColor = 'black',
   showMenu = true,
+  preSelectedLandscape = false,
   children
 }: IMobileDeviceProps) => {
   const [selectedDevice, setSelectedDevice] = useState<MobileDevice>()
   const [selectedColor, setSelectedColor] = useState<MobileDeviceColors>(
     'black'
   )
+  const [landscape, setLandscape] = useState(preSelectedLandscape)
 
   useEffect(() => {
     setPreselectedDevice()
@@ -61,12 +64,14 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
   }
 
   const setPreselectedColorForDevice = (device: MobileDevice) => {
-    if (device.colors.includes(preSelectedColor)) {
-      setSelectedColor(preSelectedColor)
-    } else {
+    if (preSelectedColor && !device.colors.includes(preSelectedColor)) {
       console.error(
         `Color ${preSelectedColor} can't be chosen for device ${device.readableName}`
       )
+      setSelectedColor('black')
+    } else if (preSelectedColor && device.colors.includes(preSelectedColor)) {
+      setSelectedColor(preSelectedColor)
+    } else {
       setSelectedColor('black')
     }
   }
@@ -94,13 +99,15 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
           selectedDevice={selectedDevice}
           selectedColor={selectedColor}
           allowedDevices={allowedDevices}
+          landscape={landscape}
+          updateLandscape={setLandscape}
           updateSelectedDevice={updateSelectedDevice}
         />
       )}
       <BuildDevice
         selectedDevice={selectedDevice}
         selectedColor={selectedColor}
-        landscape={false}
+        landscape={landscape}
       >
         {children}
       </BuildDevice>

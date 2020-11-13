@@ -1,4 +1,4 @@
-import React, { createElement, DetailedReactHTMLElement } from 'react'
+import React, {createElement, DetailedReactHTMLElement, useEffect, useState} from 'react'
 import mobileStyle from '../devices.min.css'
 import {
   MobileDevice,
@@ -19,15 +19,20 @@ export const BuildDevice: React.FC<IProps> = ({
   landscape,
   children
 }: IProps) => {
-  const colors = selectedDevice.colors
-  const hasColor = colors.includes(selectedColor)
-  const color = hasColor ? selectedColor : 'black'
+  const [rootDeviceClass, setRootDeviceClass] = useState('');
 
-  let rootDeviceClass = `${mobileStyle['marvel-device']}  ${
-    mobileStyle[selectedDevice.type]
-  } ${mobileStyle[color]}`
+  useEffect(() => {
+    const colors = selectedDevice.colors
+    const hasColor = colors.includes(selectedColor)
+    const color = hasColor ? selectedColor : 'black'
 
-  if (landscape) rootDeviceClass += ' ' + mobileStyle[rootDeviceClass]
+    let tempRootDeviceClass = `${mobileStyle['marvel-device']}  ${
+      mobileStyle[selectedDevice.type]
+    } ${mobileStyle[color]}`
+
+    if (landscape) tempRootDeviceClass += ' ' + mobileStyle.landscape
+    setRootDeviceClass(tempRootDeviceClass)
+  }, [selectedDevice, selectedColor, landscape])
 
   return (
     <div className={rootDeviceClass}>

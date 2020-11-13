@@ -1,0 +1,22 @@
+.button {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  z-index: 10;
+}
+
+.button button {
+  width:100px;
+  height:44px;
+  background-color: white;
+  padding:12px;
+  border-radius:5px;
+  border: 1px solid #2c2b2c;
+  font-weight:bold;
+  color:black;
+  cursor: pointer;
+}
+
+.button button:focus {
+  outline: grey;
+}

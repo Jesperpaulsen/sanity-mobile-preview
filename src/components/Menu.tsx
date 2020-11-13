@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import { devices } from '../devices'
 import { MobileDevice, MobileDeviceColors, MobileDevices } from '../types'
 import { Dropdown } from './Dropdown'
+import {Button} from "./Button";
 
 interface IMenuProps {
   selectedDevice: MobileDevice
   allowedDevices?: MobileDevices[]
   selectedColor: MobileDeviceColors
+  landscape: boolean
   updateSelectedDevice: (
     device: MobileDevice,
     color: MobileDeviceColors
   ) => void
+  updateLandscape: (value: boolean) => void
 }
 
 const capitalizeString = (stringToCapitalize: string) => {
@@ -24,7 +27,9 @@ const capitalizeString = (stringToCapitalize: string) => {
 export const Menu: React.FC<IMenuProps> = ({
   selectedDevice,
   allowedDevices,
+  landscape,
   updateSelectedDevice,
+  updateLandscape,
   selectedColor
 }: IMenuProps) => {
   const [color, setColor] = useState(selectedColor)
@@ -70,7 +75,7 @@ export const Menu: React.FC<IMenuProps> = ({
   })
 
   return (
-    <div style={{ display: 'flex', justifyItems: 'center' }}>
+    <div style={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
       <Dropdown
         selectedItem={device.readableName}
         availableItems={readableDevices}
@@ -83,6 +88,11 @@ export const Menu: React.FC<IMenuProps> = ({
           updateSelectedItem={updateColor}
         />
       )}
+      <Button
+        landscape={landscape}
+        updateLandscape={updateLandscape}
+        label='Rotate'
+      />
     </div>
   )
 }
