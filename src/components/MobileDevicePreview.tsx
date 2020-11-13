@@ -91,7 +91,7 @@ export const MobileDevicePreview: React.FC<IMobileDeviceProps> = ({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        minHeight: '200px'
+        minWidth: 'min-content'
       }}
     >
       {showMenu && (
