@@ -1,6 +1,6 @@
 # sanity-mobile-preview
 
-> A NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.
+> An NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.
 
 [![NPM](https://img.shields.io/npm/v/sanity-mobile-preview.svg)](https://www.npmjs.com/package/sanity-mobile-preview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -26,7 +26,7 @@ const Example = () => {
 
 ### How to set up preview with Sanity
 
-In order to set-up preview with Sanity, you first need to create a new view.
+In order to set up mobile preview with Sanity, you first need to create a new view.
 
 For simplicity, we will copy the predefined preview from [IframePreview.js](https://github.com/sanity-io/sanity-template-gatsby-blog/blob/master/template/studio/src/previews/IframePreview.js) to a file called `IframeMobilePreview.js`
 
