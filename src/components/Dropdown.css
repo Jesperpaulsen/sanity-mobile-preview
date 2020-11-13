@@ -4,7 +4,7 @@
   margin: 10px;
   z-index: 10;
 }
-ul {
+.dropdown ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -18,18 +18,18 @@ ul {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   z-index: 1;
 }
-li a {
+.dropdown li a {
   color: #000;
   text-decoration: none;
 }
-li {
+.dropdown li {
   padding: 8px 16px;
   border-bottom: 1px solid #e5e5e5;
 }
-li:last-child {
+.dropdown li:last-child {
   border-bottom: none;
 }
-li:hover {
+.dropdown li:hover {
   background-color: #929292;
   color: white;
   cursor: pointer;
