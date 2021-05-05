@@ -15,12 +15,13 @@ npm install --save sanity-mobile-preview
 ```
 
 ## Usage
+
 ```tsx
 import SanityMobilePreview from 'sanity-mobile-preview'
 import 'sanity-mobile-preview/dist/index.css?raw'
 
 const Example = () => {
-    return <SanityMobilePreview />
+  return <SanityMobilePreview />
 }
 ```
 
@@ -40,27 +41,27 @@ import 'sanity-mobile-preview/dist/index.css?raw'
 At line 47, replace
 
 ```tsx
-return(
-    <div className={styles.componentWrapper}>
-      <div className={styles.iframeContainer}>
-        <iframe src={url} frameBorder={'0'} />
-      </div>
+return (
+  <div className={styles.componentWrapper}>
+    <div className={styles.iframeContainer}>
+      <iframe src={url} frameBorder={'0'} />
     </div>
+  </div>
 )
 ```
 
 with
 
 ```tsx
-  return (
-    <div className={styles.componentWrapper}>
-      <SanityMobilePreview>
-        <div className={styles.iframeContainer}>
-          <iframe src={url} frameBorder={'0'} />
-        </div>
-      </SanityMobilePreview>
-    </div>
-  )
+return (
+  <div className={styles.componentWrapper}>
+    <SanityMobilePreview>
+      <div className={styles.iframeContainer}>
+        <iframe src={url} frameBorder={'0'} />
+      </div>
+    </SanityMobilePreview>
+  </div>
+)
 ```
 
 Then go to `deskStructure.js`.
@@ -69,7 +70,7 @@ Under `getDefaultDocumentNode` add the next snippet to the Schemes you want to a
 
 ```jsx
     S.view
-        .component(IFrameMobilePreview)
+        .component(IframeMobilePreview)
         .title('Mobile preview')
         .options({previewURL})
     ])
@@ -79,42 +80,47 @@ You should now be able to preview your website with a mobile view.
 
 ## Customization
 
-The SanityMobilePreview takes four optional arguments:
+The SanityMobilePreview takes five optional arguments:
 
-| Argument      | Values | Default |
-| ----------- | ----------- | ----------- |
-| allowedDevices      | An array of MobileDevices. This will be the devices that are selectable in the dropdown menu. | All devices
-| preSelectedDevice   | A MobileDevice. The default device to be selected.        | 'iphone-x'
-| preSelectedColor   | A device color. The default device color to selected.    | 'black
-| showMenu   | A boolean. Controls the visibility of the dropdowns.      | true
-| preSelectedLandscape   | A boolean. The default orientation of the devices      | false
+| Argument             | Values                                                                                        | Default     |
+| -------------------- | --------------------------------------------------------------------------------------------- | ----------- |
+| allowedDevices       | An array of MobileDevices. This will be the devices that are selectable in the dropdown menu. | All devices |
+| preSelectedDevice    | A MobileDevice. The default device to be selected.                                            | 'iphone-x'  |
+| preSelectedColor     | A device color. The default device color to selected.                                         | 'black      |
+| showMenu             | A boolean. Controls the visibility of the dropdowns.                                          | true        |
+| preSelectedLandscape | A boolean. The default orientation of the devices                                             | false       |
 
 If you have specified a preSelectedDevice that is not specified in allowedDevices, it will default to the first device in allowedDevices.
 
 If you have specified a preSelectedColor that is not applicable to the preSelectedDevice, the preSelectedColor will default to black.
 
 #### Example
+
 This example will load a silver iPad mini as default, and only allows iPhone X and iPad to be selected:
 
 ```js
-
 const App = () => {
-  return <MobileDevicePreview preSelectedDevice={"ipad"} preSelectedColor={"silver"} allowedDevices={["ipad", "iphone-x"]} >
-    <div> This is a demo 🤠</div>
-  </MobileDevicePreview>
+  return (
+    <MobileDevicePreview
+      preSelectedDevice={'ipad'}
+      preSelectedColor={'silver'}
+      allowedDevices={['ipad', 'iphone-x']}
+    >
+      <div> This is a demo 🤠</div>
+    </MobileDevicePreview>
+  )
 }
-
 ```
 
 ## Types
 
 MobileDevices = 'iphone-x'
-                  | 'note8'
-                  | 'iphone8'
-                  | 'iphone8plus'
-                  | 'iphone5s'
-                  | 'ipad'
-                  | 'nexus5'
+| 'note8'
+| 'iphone8'
+| 'iphone8plus'
+| 'iphone5s'
+| 'ipad'
+| 'nexus5'
 
 MobileDeviceColors = 'silver' | 'black' | 'gold'
 
@@ -122,18 +128,18 @@ MobileDeviceColors = 'silver' | 'black' | 'gold'
 
 The different devices are:
 
-| DeviceId      | Readable name | Colors
-| ----------- | ----------- | ----------- |
-| iphone-x | iPhone X | black |
-| note8 | Note 8| black |
-| iphone8 | iPhone 8| black, silver, gold |
+| DeviceId    | Readable name | Colors              |
+| ----------- | ------------- | ------------------- |
+| iphone-x    | iPhone X      | black               |
+| note8       | Note 8        | black               |
+| iphone8     | iPhone 8      | black, silver, gold |
 | iphone8plus | iPhone 8 Plus | black, silver, gold |
-| iphone5s | iPhone 5s | black, silver, gold |
-| ipad | iPad mini | black, silver |
-| nexus5 | Nexus 5 | black |
-
+| iphone5s    | iPhone 5s     | black, silver, gold |
+| ipad        | iPad mini     | black, silver       |
+| nexus5      | Nexus 5       | black               |
 
 ## Credit
+
 [Marvel Devices](https://github.com/marvelapp/devices.css/) <br>
 [create-react-library](https://github.com/transitive-bullshit/create-react-library)
 
