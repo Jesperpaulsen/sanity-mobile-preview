@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { devices } from '../devices'
 import { MobileDevice, MobileDeviceColors, MobileDevices } from '../types'
 import { Dropdown } from './Dropdown'
-import {Button} from "./Button";
+import { Button } from './Button'
 
 interface IMenuProps {
   selectedDevice: MobileDevice
@@ -75,7 +75,9 @@ export const Menu: React.FC<IMenuProps> = ({
   })
 
   return (
-    <div style={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}>
+    <div
+      style={{ display: 'flex', justifyItems: 'center', alignItems: 'center' }}
+    >
       <Dropdown
         selectedItem={device.readableName}
         availableItems={readableDevices}

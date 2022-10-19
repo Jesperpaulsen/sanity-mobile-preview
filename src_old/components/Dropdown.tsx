@@ -15,7 +15,11 @@ export const Dropdown: React.FC<IDropdown> = ({
   const [dropdown, setDropdown] = useState(false)
 
   return (
-    <div className={dropdownStyles.dropdown} style={{ width: '200px' }} onFocus={() => setDropdown(false)}>
+    <div
+      className={dropdownStyles.dropdown}
+      style={{ width: '200px' }}
+      onFocus={() => setDropdown(false)}
+    >
       <div
         className={dropdownStyles.button}
         onClick={() => setDropdown(!dropdown)}

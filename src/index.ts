@@ -1,3 +1,2 @@
-import { MobileDevicePreview } from './components/MobileDevicePreview'
-
-export default MobileDevicePreview
+import MobileDevicePreview from "./MobileDevicePreview"
+export { MobileDevicePreview }
