@@ -10,7 +10,7 @@ export default defineConfig({
   plugins: [viteCommonjs(), dts()],
   build: {
     lib: {
-      entry: resolve(__dirname, "lib/main.js"),
+      entry: resolve(__dirname, "src/index.ts"),
       name: "SanityMobilePreview",
       fileName: "sanity-mobile-preview",
     },

@@ -1,5 +1,5 @@
 import React from "react"
-import MobileDeviewPreview from "./MobileDevicePreview"
+import MobileDeviewPreview from "../MobileDevicePreview"
 
 const Wrapper: React.FC = () => {
   return (
