@@ -5,16 +5,24 @@
   "author": "Jesperpaulsen",
   "license": "MIT",
   "repository": "Jesperpaulsen/sanity-mobile-preview",
-  "main": "dist/index.js",
-  "module": "dist/index.modern.js",
-  "source": "src/index.ts",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/sanity-mobile-preview.umd.cjs",
+  "module": "./dist/sanity-mobile-preview.js",
+  "exports": {
+    ".": {
+      "import": "./dist/sanity-mobile-preview.js",
+      "require": "./dist/sanity-mobile-preview.umd.cjs"
+    }
+  },
   "scripts": {
     "test:lint": "eslint .",
     "deploy": "gh-pages -d example/build",
-    "serve-vite": "vite",
-    "build-vite": "vite build",
-    "preview-vite": "vite preview"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0",
@@ -23,6 +31,7 @@
   "devDependencies": {
     "@originjs/vite-plugin-commonjs": "^1.0.1",
     "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
     "autoprefixer": "^10.4.12",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
@@ -34,14 +43,11 @@
     "gh-pages": "^2.2.0",
     "postcss": "^8.4.17",
     "prettier": "^2.7.1",
+    "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwindcss": "^3.1.8",
     "typescript": "^3.7.5",
     "vite": "^2.7.2",
-    "vite-plugin-env-compatible": "^1.1.1",
-    "vite-plugin-html": "3.2.0"
-  },
-  "files": [
-    "dist"
-  ]
+    "vite-plugin-dts": "^1.6.6"
+  }
 }

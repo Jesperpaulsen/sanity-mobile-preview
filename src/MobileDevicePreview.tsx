@@ -2,7 +2,7 @@ import React from "react"
 import "./index.css"
 
 const MobileDeviewPreview: React.FC = () => {
-  return <div></div>
+  return <div>Hello</div>
 }
 
 export default MobileDeviewPreview
