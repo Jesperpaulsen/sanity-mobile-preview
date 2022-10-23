@@ -12,23 +12,24 @@ interface IDeviceProps {
 const Device: React.FC<PropsWithChildren<IDeviceProps>> = ({
   selectedColor,
   selectedDevice,
+  landscape,
   children,
 }) => {
-  console.log(selectedDevice)
-
   return (
-    <div
-      className={`device device-${selectedColor} device-${selectedDevice.id}`}
-    >
-      <div className="device-frame">
-        <div className="device-screen overflow-hidden">{children}</div>
+    <div className={`${landscape && "rotate-90"}`}>
+      <div
+        className={`device device-${selectedColor} device-${selectedDevice.id}`}
+      >
+        <div className="device-frame">
+          <div className="device-screen overflow-hidden">{children}</div>
+        </div>
+        {deviceBuildingBlocks.map((className) => (
+          <div
+            key={`${selectedDevice.id}-${className}`}
+            className={`device-${className}`}
+          />
+        ))}
       </div>
-      {deviceBuildingBlocks.map((className) => (
-        <div
-          key={`${selectedDevice.id}-${className}`}
-          className={`device-${className}`}
-        />
-      ))}
     </div>
   )
 }

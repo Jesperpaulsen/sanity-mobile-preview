@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React, { useRef, useState } from "react"
+import { useCloseOnClickOutside } from "../hooks/useCloseOnClickOutside"
 import { IDropdownItem } from "../types/IDropdownItem"
 
 interface IDropdown<T> {
@@ -12,17 +13,27 @@ const Dropdown = <T = any,>({
   availableItems,
   onItemSelected,
 }: IDropdown<T>) => {
+  const ref = useRef(null)
+
   const [showDropdown, setShowDropdown] = useState(false)
 
+  useCloseOnClickOutside(ref, () => setShowDropdown(false))
+
   return (
-    <div>
-      <div onClick={() => setShowDropdown(true)}>{selectedItem.label}</div>
+    <div
+      ref={ref}
+      className="relative whitespace-nowrap w-44 p-1 m-2 cursor-pointer border border-black rounded hover:shadow-md"
+      onClick={() => setShowDropdown(!showDropdown)}
+    >
+      <div>{selectedItem.label}</div>
       {showDropdown && (
-        <ul>
+        <ul className="absolute top-8 -left-1 w-44 z-[5000] bg-white shadow-2xl p-2 rounded-b-md cursor-pointer">
           {availableItems.map((item) => (
             <li
+              className="hover:bg-slate-200 p-1 rounded-sm"
               key={`${item.value}`}
-              onClick={() => {
+              onClick={(e) => {
+                e.nativeEvent.stopImmediatePropagation()
                 onItemSelected(item.value)
                 setShowDropdown(false)
               }}

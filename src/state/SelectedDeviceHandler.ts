@@ -79,4 +79,8 @@ export class SelectedDeviceHandler extends SubStateHandler<DeviceStateManager> {
     }
     this.setState({ devices: items })
   }
+
+  readonly rotateDevice = () => {
+    this.setState({ selectedLandscape: !this.state.selectedLandscape })
+  }
 }
