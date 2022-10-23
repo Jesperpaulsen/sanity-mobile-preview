@@ -78,7 +78,11 @@ const MobileDeviewPreview: React.FC<PropsWithChildren<IMobileDeviceProps>> = (
             props.children
           ) : (
             <div className="w-full h-full border-0">
-              <iframe src={props.url} frameBorder={"0"} />
+              <iframe
+                src={props.url}
+                frameBorder={"0"}
+                className="w-full h-full"
+              />
             </div>
           )}
         </Device>
