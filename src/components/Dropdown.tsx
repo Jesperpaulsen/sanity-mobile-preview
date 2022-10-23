@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useCloseOnClickOutside } from "../hooks/useCloseOnClickOutside"
 import { IDropdownItem } from "../types/IDropdownItem"
+import ArrowIcon from "./ArrowIcon"
 
 interface IDropdown<T> {
   selectedItem: IDropdownItem<T>
@@ -25,7 +26,10 @@ const Dropdown = <T = any,>({
       className="relative whitespace-nowrap w-44 p-1 m-2 cursor-pointer border border-black rounded hover:shadow-md"
       onClick={() => setShowDropdown(!showDropdown)}
     >
-      <div>{selectedItem.label}</div>
+      <div className="flex items-center justify-between">
+        {selectedItem.label}
+        <ArrowIcon isOpen={showDropdown} />
+      </div>
       {showDropdown && (
         <ul className="absolute top-8 -left-1 w-44 z-[5000] bg-white shadow-2xl p-2 rounded-b-md cursor-pointer">
           {availableItems.map((item) => (

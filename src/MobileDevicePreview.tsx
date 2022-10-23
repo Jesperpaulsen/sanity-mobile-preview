@@ -43,7 +43,7 @@ const MobileDeviewPreview: React.FC<PropsWithChildren<IMobileDeviceProps>> = (
   return (
     <div className="flex flex-col justify-center items-center min-w-[min-content]">
       {props.showMenu !== false && (
-        <div className="flex justify-evenly w-full">
+        <div className="flex justify-evenly w-full mb-5">
           <Dropdown<TDeviceId>
             availableItems={state.devices}
             onItemSelected={manager.deviceHandler.updateDevice}
