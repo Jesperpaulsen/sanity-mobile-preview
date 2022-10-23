@@ -19,12 +19,12 @@ specifiers:
   react-dom: ^18.2.0
   tailwindcss: ^3.1.8
   typescript: ^3.7.5
-  use-oo-state: ^0.0.16
+  use-oo-state: ^0.0.19
   vite: ^2.7.2
   vite-plugin-dts: ^1.6.6
 
 dependencies:
-  use-oo-state: 0.0.16_biqbaboplfbrettd7655fr4n2y
+  use-oo-state: 0.0.19_biqbaboplfbrettd7655fr4n2y
 
 devDependencies:
   '@originjs/vite-plugin-commonjs': 1.0.3
@@ -2493,8 +2493,8 @@ packages:
       punycode: 2.1.1
     dev: true
 
-  /use-oo-state/0.0.16_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-x2G8ZMfJ/Npofodw/dDyGu/yO5C3cH5QhmtHwW7eTB2LXirISyz8TmC+8A5b5tcOXrg7A87u6Vfcyof8MnazJw==}
+  /use-oo-state/0.0.19_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-u4t5pfWMtHb7ry8+H8uwu4dTYxOW+0tOf0OJvBfb8aGpYXHUe1qYpTLonWv+Zjj1cQiqOOZIR9yQ+cMR5sTk9g==}
     peerDependencies:
       react: ^17.0.2
       react-dom: ^17.0.2

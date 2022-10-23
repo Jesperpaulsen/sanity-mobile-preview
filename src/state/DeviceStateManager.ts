@@ -12,6 +12,10 @@ export class DeviceStateManager extends StateManager<
   deviceHandler = new SelectedDeviceHandler(this)
 
   override onCreated = () => {
+    this.initializeDevice()
+  }
+
+  private readonly initializeDevice = () => {
     const device = this.deviceHandler.getPreselectedDevice({
       selectedDevice: this.props.selectedDevice,
       allowedDevices: this.props.allowedDevices,
@@ -22,7 +26,6 @@ export class DeviceStateManager extends StateManager<
   }
 
   override onBeforeStateUpdated = (stateUpdate: Partial<IDeviceState>) => {
-    console.log(stateUpdate)
     if (stateUpdate.selectedDevice) {
       const colors = this.colorHandler.buildDropdownOptions(
         stateUpdate.selectedDevice
@@ -32,16 +35,16 @@ export class DeviceStateManager extends StateManager<
     return stateUpdate
   }
 
-  override onStateUpdated = (
-    newState: IDeviceState,
-    oldState: IDeviceState
+  override onPropsUpdated = (
+    newProps: IMobileDeviceProps,
+    oldProps: IMobileDeviceProps
   ) => {
-    console.log(newState.selectedDevice.id, oldState.selectedDevice.id)
-  }
-
-  override onPropsUpdated = (newProps: IMobileDeviceProps) => {
     if (newProps.allowedDevices) {
       this.deviceHandler.loadDropdownItems()
+    } else if (newProps.showMenu !== oldProps.showMenu) {
+      this.deviceHandler.setState({ showMenu: newProps.showMenu })
+    } else if (newProps.selectedDevice !== oldProps.selectedDevice) {
+      this.initializeDevice()
     }
   }
 }

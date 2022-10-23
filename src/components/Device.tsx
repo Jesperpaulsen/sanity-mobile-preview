@@ -1,11 +1,11 @@
 import React, { PropsWithChildren } from "react"
 import deviceBuildingBlocks from "../constants/deviceBuildingBlocks"
 import { IDevice } from "../types/IDevice"
-import { TColors } from "../types/TColors"
+import { TColor } from "../types/TColor"
 
 interface IDeviceProps {
   selectedDevice: IDevice
-  selectedColor: TColors
+  selectedColor: TColor
   landscape: boolean
 }
 

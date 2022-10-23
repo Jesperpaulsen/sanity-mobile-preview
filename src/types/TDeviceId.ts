@@ -7,5 +7,5 @@ export type TDeviceId =
   | "google-pixel-6-pro"
   | "google-pixel-2-xl"
   | "google-pixel"
-  | "samsung-galaxy-s8"
+  | "galaxy-s8"
   | "ipad-pro"

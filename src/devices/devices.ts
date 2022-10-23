@@ -20,6 +20,6 @@ export const devices: Record<TDeviceId, IDevice> = {
   "google-pixel-6-pro": GooglePixel6Pro,
   "google-pixel-2-xl": GooglePixel2XL,
   "google-pixel": GooglePixel,
-  "samsung-galaxy-s8": SamsungGalaxyS8,
+  "galaxy-s8": SamsungGalaxyS8,
   "ipad-pro": iPadPro,
 }

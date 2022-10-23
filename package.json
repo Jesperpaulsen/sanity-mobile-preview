@@ -51,6 +51,6 @@
     "vite-plugin-dts": "^1.6.6"
   },
   "dependencies": {
-    "use-oo-state": "^0.0.16"
+    "use-oo-state": "^0.0.19"
   }
 }

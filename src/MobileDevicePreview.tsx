@@ -3,7 +3,7 @@ import "./styles/index.css"
 import "./styles/devices.min.css"
 import Device from "./components/Device"
 import { TDeviceId } from "./types/TDeviceId"
-import { TColors } from "./types/TColors"
+import { TColor } from "./types/TColor"
 import { useOOState } from "use-oo-state"
 import { DeviceStateManager } from "./state/DeviceStatemanager"
 import Dropdown from "./components/Dropdown"
@@ -13,29 +13,31 @@ import { capitalizeString } from "./utils/capitalizeString"
 export interface IMobileDeviceProps {
   allowedDevices?: TDeviceId[]
   selectedDevice?: TDeviceId
-  selectedColor?: TColors
+  selectedColor?: TColor
   selectedLandscape?: boolean
   showMenu?: boolean
   url?: string
 }
 
+const initialState = {
+  selectedColor: "black",
+  selectedDevice: devices["iphone-14-pro"],
+  selectedLandscape: false,
+  showMenu: false,
+  devices: [],
+  colors: [],
+}
+
 const MobileDeviewPreview: React.FC<PropsWithChildren<IMobileDeviceProps>> = (
   props
 ) => {
-  const [state, manager] = useOOState(
-    DeviceStateManager,
-    {
-      selectedColor: "black",
-      selectedDevice: devices["iphone-14"],
-      selectedLandscape: false,
-      showMenu: false,
-      devices: [],
-      colors: [],
-    },
-    props
-  )
+  const [state, manager] = useOOState(DeviceStateManager, initialState, props)
 
-  console.log(state)
+  if (!props.children && !props.url) {
+    throw new Error(
+      "Make sure SanityMobilePreview recieves either children or an url as child"
+    )
+  }
 
   return (
     <div className="flex flex-col justify-center items-center min-w-[min-content]">
@@ -49,9 +51,14 @@ const MobileDeviewPreview: React.FC<PropsWithChildren<IMobileDeviceProps>> = (
               value: state.selectedDevice.id,
             }}
           />
-          <Dropdown<TColors>
+          <Dropdown<TColor>
             availableItems={state.colors}
-            onItemSelected={manager.deviceHandler.updateDevice}
+            onItemSelected={(color) =>
+              manager.colorHandler.loadColorForDevice(
+                state.selectedDevice,
+                color
+              )
+            }
             selectedItem={{
               label: capitalizeString(state.selectedColor),
               value: state.selectedColor,
@@ -65,9 +72,13 @@ const MobileDeviewPreview: React.FC<PropsWithChildren<IMobileDeviceProps>> = (
           selectedColor={state.selectedColor}
           selectedDevice={state.selectedDevice}
         >
-          <div className="bg-white w-full h-full !flex justify-center items-center">
-            hello
-          </div>
+          {props.children ? (
+            props.children
+          ) : (
+            <div className="w-full h-full">
+              <iframe src={props.url} frameBorder={"0"} />
+            </div>
+          )}
         </Device>
       )}
     </div>

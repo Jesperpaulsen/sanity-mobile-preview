@@ -1,3 +1,3 @@
 import { deviceColors } from "../constants/deviceColors"
 
-export type TColors = typeof deviceColors[number]
+export type TColor = typeof deviceColors[number]
