@@ -25,12 +25,20 @@ export class DeviceStateManager extends StateManager<
     this.deviceHandler.loadDropdownItems()
   }
 
-  override onBeforeStateUpdated = (stateUpdate: Partial<IDeviceState>) => {
+  override onBeforeStateUpdated = (
+    stateUpdate: Partial<IDeviceState>,
+    currentState: IDeviceState
+  ) => {
     if (stateUpdate.selectedDevice) {
       const colors = this.colorHandler.buildDropdownOptions(
         stateUpdate.selectedDevice
       )
       stateUpdate.colors = colors
+      const selectedColor = this.colorHandler.getColorForDevice(
+        stateUpdate.selectedDevice,
+        currentState.selectedColor
+      )
+      stateUpdate.selectedColor = selectedColor
     }
     return stateUpdate
   }

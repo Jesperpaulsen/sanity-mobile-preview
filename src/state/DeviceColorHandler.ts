@@ -7,15 +7,17 @@ import { DeviceStateManager } from "./DeviceStatemanager"
 
 export class DeviceColorHandler extends SubStateHandler<DeviceStateManager> {
   readonly loadColorForDevice = (device: IDevice, selectedColor?: TColor) => {
+    const color = this.getColorForDevice(device, selectedColor)
+    this.setState({ selectedColor: color })
+  }
+
+  readonly getColorForDevice = (device: IDevice, selectedColor?: TColor) => {
     if (selectedColor && !device.colors.includes(selectedColor)) {
-      console.error(
-        `Color ${selectedColor} can't be chosen for device ${device.name}`
-      )
-      this.setState({ selectedColor: "black" })
+      return device.colors[0]
     } else if (selectedColor && device.colors.includes(selectedColor)) {
-      this.setState({ selectedColor })
+      return selectedColor
     } else {
-      this.setState({ selectedColor: "black" })
+      return device.colors[0]
     }
   }
 
