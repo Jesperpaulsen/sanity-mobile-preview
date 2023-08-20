@@ -1,6 +1,6 @@
 {
   "name": "sanity-mobile-preview",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "An NPM package written in React used to preview mobile devices. Especially helpful when used in combination with a CMS like sanity.",
   "author": "Jesperpaulsen",
   "license": "MIT",
@@ -24,7 +24,7 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "react": "^16.0.0 || ^17.0.0"
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
